@@ -126,3 +126,4 @@ let mySprite = sprites.create(img`
 
 
 
+scene.setBackgroundColor(0)
