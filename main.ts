@@ -129,3 +129,7 @@ let mySprite = sprites.create(img`
 let item: number
 //
 mySprite.setVelocity(50, 50)
+pause(100)
+pause(100)
+pause(100)
+pause(100)
