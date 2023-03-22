@@ -126,3 +126,4 @@ let mySprite = sprites.create(img`
 
 
 
+let item: number
