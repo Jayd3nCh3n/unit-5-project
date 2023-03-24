@@ -16,9 +16,9 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`
-        tile2
+        myTile
     `, function on_overlap_tile(sprite: Sprite, location: tiles.Location) {
-    game.gameOver(false)
+    game.gameOver(true)
 })
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function on_player1_button_a_pressed() {
     
