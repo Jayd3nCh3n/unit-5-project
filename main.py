@@ -1,4 +1,4 @@
-def on_player2_button_a_pressed():
+ def on_player2_button_a_pressed():
     global jump, player1X, player1Y, player2X, player2Y
     jump = 1
     player1X = mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.ONE)).x
@@ -115,8 +115,8 @@ tiles.place_on_tile(mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.TWO)
 tiles.place_on_tile(mySprite, tiles.get_tile_location(1, 4))
 mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.ONE)).vx = 75
 mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.TWO)).vx = 75
-mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.ONE)).ay = 500
-mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.TWO)).ay = 500
+mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.ONE)).ay = 400
+mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.TWO)).ay = 400
 mySprite.vx = 75
 scene.camera_follow_sprite(mySprite)
 
