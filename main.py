@@ -20,7 +20,7 @@ def on_overlap_tile(sprite, location):
     game.game_over(False)
 scene.on_overlap_tile(SpriteKind.player,
     assets.tile("""
-        tile2
+        myTile
     """),
     on_overlap_tile)
 
@@ -46,64 +46,66 @@ player2X = 0
 player1Y = 0
 player1X = 0
 jump = 0
-tiles.set_current_tilemap(tilemap("""level1"""))
+tiles.set_current_tilemap(tilemap("""
+    level1
+"""))
 mySprite = sprites.create(img("""
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-"""),
+        . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . .
+    """),
     SpriteKind.player)
 mp.set_player_sprite(mp.player_selector(mp.PlayerNumber.ONE),
     sprites.create(img("""
             . . . . . . . . . . b 5 b . . .
-                . . . . . . . . . b 5 b . . . .
-                . . . . . . b b b b b b . . . .
-                . . . . . b b 5 5 5 5 5 b . . .
-                . . . . b b 5 d 1 f 5 d 4 c . .
-                . . . . b 5 5 1 f f d d 4 4 4 b
-                . . . . b 5 5 d f b 4 4 4 4 b .
-                . . . b d 5 5 5 5 4 4 4 4 b . .
-                . . b d d 5 5 5 5 5 5 5 5 b . .
-                . b d d d d 5 5 5 5 5 5 5 5 b .
-                b d d d b b b 5 5 5 5 5 5 5 b .
-                c d d b 5 5 d c 5 5 5 5 5 5 b .
-                c b b d 5 d c d 5 5 5 5 5 5 b .
-                . b 5 5 b c d d 5 5 5 5 5 d b .
-                b b c c c d d d d 5 5 5 b b . .
-                . . . c c c c c c c c b b . . .
+                            . . . . . . . . . b 5 b . . . .
+                            . . . . . . b b b b b b . . . .
+                            . . . . . b b 5 5 5 5 5 b . . .
+                            . . . . b b 5 d 1 f 5 d 4 c . .
+                            . . . . b 5 5 1 f f d d 4 4 4 b
+                            . . . . b 5 5 d f b 4 4 4 4 b .
+                            . . . b d 5 5 5 5 4 4 4 4 b . .
+                            . . b d d 5 5 5 5 5 5 5 5 b . .
+                            . b d d d d 5 5 5 5 5 5 5 5 b .
+                            b d d d b b b 5 5 5 5 5 5 5 b .
+                            c d d b 5 5 d c 5 5 5 5 5 5 b .
+                            c b b d 5 d c d 5 5 5 5 5 5 b .
+                            . b 5 5 b c d d 5 5 5 5 5 d b .
+                            b b c c c d d d d 5 5 5 b b . .
+                            . . . c c c c c c c c b b . . .
         """),
         SpriteKind.player))
 mp.set_player_sprite(mp.player_selector(mp.PlayerNumber.TWO),
     sprites.create(img("""
             . . . . . . . . . . b 7 b . . .
-                . . . . . . . . . b 7 b . . . .
-                . . . . . . b b b b b b . . . .
-                . . . . . b b 7 7 7 7 7 b . . .
-                . . . . b b 7 d 1 f 7 d 4 c . .
-                . . . . b 7 7 1 f f d d 4 4 4 b
-                . . . . b 7 7 d f b 4 4 4 4 b .
-                . . . b d 7 7 7 7 4 4 4 4 b . .
-                . b b d d d 7 7 7 7 7 7 7 b . .
-                b d d d b b b 7 7 7 7 7 7 7 b .
-                c d d b 7 7 d c 7 7 7 7 7 7 b .
-                c b b d 7 d c d 7 7 7 7 7 7 b .
-                c b 7 7 b c d d 7 7 7 7 7 7 b .
-                b b c c c d d d 7 7 7 7 7 d b .
-                . . . . c c d d d 7 7 7 b b . .
-                . . . . . . c c c c c b b . . .
+                            . . . . . . . . . b 7 b . . . .
+                            . . . . . . b b b b b b . . . .
+                            . . . . . b b 7 7 7 7 7 b . . .
+                            . . . . b b 7 d 1 f 7 d 4 c . .
+                            . . . . b 7 7 1 f f d d 4 4 4 b
+                            . . . . b 7 7 d f b 4 4 4 4 b .
+                            . . . b d 7 7 7 7 4 4 4 4 b . .
+                            . b b d d d 7 7 7 7 7 7 7 b . .
+                            b d d d b b b 7 7 7 7 7 7 7 b .
+                            c d d b 7 7 d c 7 7 7 7 7 7 b .
+                            c b b d 7 d c d 7 7 7 7 7 7 b .
+                            c b 7 7 b c d d 7 7 7 7 7 7 b .
+                            b b c c c d d d 7 7 7 7 7 d b .
+                            . . . . c c d d d 7 7 7 b b . .
+                            . . . . . . c c c c c b b . . .
         """),
         SpriteKind.player))
 tiles.place_on_tile(mp.get_player_sprite(mp.player_selector(mp.PlayerNumber.ONE)),
