@@ -34,6 +34,7 @@ controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
     }
 })
 let jump = 0
+let what = 3
 let player2Y = 0
 let player2X = 0
 let player1Y = 0
