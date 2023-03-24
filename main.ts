@@ -7,7 +7,7 @@ controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).setPosition(player1X, player1Y)
         mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).setPosition(player2X, player2Y)
         if (mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).isHittingTile(CollisionDirection.Bottom)) {
-            mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two)).vy = -190
+            mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One)).vy = -190
             jump = 1
         } else {
             jump = -1
